@@ -4,43 +4,43 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Step 1: Building the code"
+                echo "Step 1: Building the application using Gradle"
             }
         }
         
         stage('Unit and Integration Tests') {
             steps {
-                echo "Step 2: Executing unit and integration tests"
+                echo "Step 2: Running unit and integration tests with JUnit and TestNG"
             }
         }
 
         stage('Code Analysis') {
             steps {
-                echo "Step 3: Performing code analysis"
+                echo "Step 3: Analyzing the code using a static code analysis tool"
             }
         }
 
         stage('Security Scan') {
             steps {
-                echo "Step 4: Conducting a security scan"
+                echo "Step 4: Performing a security scan using OWASP ZAP"
             }
         }
 
         stage('Deploy to Staging') {
             steps {
-                echo "Step 5: Deploying the application to a staging server"
+                echo "Step 5: Deploying the application to a staging server on AWS"
             }
         }
 
         stage('Integration Tests on Staging') {
             steps {
-                echo "Step 6: Running integration tests on the staging environment"
+                echo "Step 6: Executing integration tests on the staging environment"
             }
         }
 
         stage('Deploy to Production') {
             steps {
-                echo "Step 7: Deploying the application to a production server"
+                echo "Step 7: Deploying the application to a production server on Azure"
             }
         }
     }
@@ -51,7 +51,7 @@ pipeline {
             emailext(
                 to: "varun.murali1997@gmail.com",
                 subject: "Pipeline Status: Success",
-                body: "The Jenkins pipeline has successfully completed its tasks.",
+                body: "The Jenkins pipeline has successfully completed all tasks.",
                 attachLog: true
             )
         }
